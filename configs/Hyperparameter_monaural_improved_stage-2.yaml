@@ -1,0 +1,83 @@
+# optimization config
+gpu: "1"
+batch_size: 2
+epoch_num: 2000
+encoder_lr: !!float 0.0
+main_lr: !!float 0.000000001
+
+lr_schedule: plateau
+mode: min
+patience: 50
+factor: 0.5
+min_lr: !!float 1e-6
+
+save_epoch: 50
+optimizer: Adam
+weight_decay: 0.0001
+
+# ========= main branch =========
+
+model_name: USEF-TFGridnet
+load_conv: False
+freeze_conv: False
+hidden_channels: 64
+emb_dim: 64
+enc_num_block: 1
+
+layer_num: 2
+return_clean_dvec: False
+refine_layer_num: 2
+fusion_shortcut: [0,1]
+cut_pos: True
+
+
+# load_encoder: "PATH/TO/TRAINED/ENCODER/encoder_<ID>.pt"
+load_encoder: ""
+
+sep_layer_num: 3
+
+# ===================================================
+
+load_model: "output/improved-monaural.pt" # THIS will overwrite the prev encoder loading
+
+# dataset
+train_dataset_dir: "data/LibriSpeech/LibriSpeech/_train_data"
+val_dataset_dir: "data/LibriSpeech/LibriSpeech/_val_data"
+
+sample_rate: 16000 
+wave_length: 48000
+pos_example_length: 48000
+neg_example_length: 48000
+dvec_rate: 50
+return_clean_dvec: False
+snr_db_range: [0, 0]
+source_num: 3
+min_source_num: 3
+active_num: [-1, 1, -1]
+reproducable: False
+normalize: False
+perturb_speeds: 
+filling_pattern: repeat
+reverb: none
+brir_dir: []
+binaural: False
+zero_degree_pos: True
+concat_pos: False
+reverb_cond: False
+zero_in_tgt: False
+noise_dir: "data/wham_noise/"
+special_spk: ["Partial_Pos", "Partial_Neg"]
+PI_range: [0.33, 0.66]
+NI_range: [1.0, 1.0]
+tgt_snr: -1000000000 # no scaling on tgt intensity in enrollment
+same_disturb: False
+normalize: False
+gradient_clip_val: 0.0
+
+loss_type: "sisdr"
+emb_loss_type: "mse"
+frozen_encoder: ""
+
+SNR_Weight: 1.0
+DEC_Weight: 0.0
+Embedding_Weight: 0.0

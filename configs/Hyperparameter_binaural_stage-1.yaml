@@ -1,0 +1,87 @@
+# optimization config
+gpu: "3"
+batch_size: 2
+epoch_num: 500
+encoder_lr: !!float 0.0005
+head_lr: !!float 0.001
+main_lr: !!float 0.0
+
+lr_schedule: plateau
+mode: min
+patience: 50
+factor: 0.5
+min_lr: !!float 1e-6
+
+save_epoch: 50
+optimizer: Adam
+
+# =========== encoder ==========
+load_encoder: ""
+
+# ========= encoder head =========
+load_encoder_head: ""
+layer_num: 2
+out_dim: 0
+
+# ============ fusion method =============
+
+# ----------- tfgridnet as kv fusion ------------
+fusion_name: "tfgridnet_kv"
+pooling_size: 40
+fusion_stride: 40
+
+# ========= main branch =========
+
+model_name: tfgridnet_causal
+n_fft: 128
+stride: 64
+lstm_hidden_units: 64
+emb_dim: 64
+emb_ks: 1
+n_layers: 3
+model_normalize: True
+fusion_layer: [0, 1]
+
+# ===================================================
+
+load_model: ""
+
+# librispeech dataset
+train_dataset_dir: "data/LibriSpeech/LibriSpeech/_train_data"
+val_dataset_dir: "data/LibriSpeech/LibriSpeech/_val_data"
+
+sample_rate: 16000 
+wave_length: 48000
+pos_example_length: 48000
+neg_example_length: 48000
+dvec_rate: 50
+return_clean_dvec: False
+snr_db_range: [0, 0]
+source_num: 3
+min_source_num: 3
+active_num: [-1, 1, -1]
+reproducable: False
+normalize: False
+perturb_speeds: 
+filling_pattern: repeat
+reverb: all
+brir_dir: [
+  data/MixLibriSpeech/CIPIC, 
+  data/RRBRIR, 
+  data/ASH-Listening-Set-8.0/BRIRs, 
+  data/CATT_RIRs/Binaural/16k]
+binaural: True
+zero_degree_pos: True
+concat_pos: False
+reverb_cond: True
+zero_in_tgt: False
+noise_dir: "data/wham_noise/"
+special_spk: ["Partial_Pos", "Partial_Neg"]
+PI_range: [0.33, 0.66]
+NI_range: [1.0, 1.0]
+tgt_snr: -1000000000 # no scaling on tgt intensity in enrollment
+same_disturb: False
+loss_type: "snr"
+
+SNR_Weight: 0.0
+Embedding_Weight: 1.0
