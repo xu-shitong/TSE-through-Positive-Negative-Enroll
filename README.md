@@ -3,7 +3,7 @@ This repository provide the training and testing code for the paper: "Target Spe
 
 In this work, we explore a novel enrollment strategy that encodes target speaker information from the noisy enrollment by comparing segments where the target speaker is talking (Positive Enrollments) with segments where the target speaker is silent (Negative Enrollments).
 
-Thanks for the suggestions given by the reviewers, we trained a model variant using the fusion method proposed in USEF-TFGridnet. Please see the details in section [Improve Model Performance with Early Fusion](#improve-model-performance-with-early-fusion).
+Thanks for the suggestions given by the reviewers, in addition to the model described in the paper, we trained a model variant using the fusion method proposed in USEF-TFGridnet. Please see the details in section [Improve Model Performance with Early Fusion](#improve-model-performance-with-early-fusion).
 
 <p align="center">
   <img align="middle" height="600" src="assets/task-formulation.png"/>
@@ -47,7 +47,12 @@ In each folder, we include the following 5 audios:
 
 # Improve Model performance with Early Fusion
 
-Following the reviewers' suggestions, we implemented the early fusion method proposed in USEF-TFGridnet. 
+Following the reviewers' suggestions, we implemented the early fusion method proposed in USEF-TFGridnet. Figure below shows the model variant's architecture:
+
+<p align="center">
+  <img align="middle" height="300" src="assets/model-variant-architecture.png"/>
+</p>
+
 
 The model variant is also trained with a two-staged training method:
 
