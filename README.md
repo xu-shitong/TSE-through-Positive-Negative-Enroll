@@ -1,4 +1,4 @@
-# Overview
+# TSE through comparing Positive and Negative Enrollments
 This repository provide the training and testing code for the paper: "Target Speaker Extraction through Comparing Noisy Positive and Negative Audio Enrollments" (Accepted by [NeurIPS 2025](https://neurips.cc/virtual/2025/poster/117224))
 
 In this work, we explore a novel enrollment strategy that encodes target speaker information from the noisy enrollment by comparing segments where the target speaker is talking (Positive Enrollments) with segments where the target speaker is silent (Negative Enrollments).
