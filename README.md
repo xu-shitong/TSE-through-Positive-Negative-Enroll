@@ -51,7 +51,7 @@ In each folder, we include the following 5 audios:
 
 # Improve Model performance with Early Fusion
 
-Following the reviewers' suggestions, we implemented the early fusion method proposed in USEF-TFGridnet. Figure below shows the model variant's architecture:
+In addition to the model described in the paper, we trained a model variant using the early fusion method proposed in USEF-TFGridnet. Figure below shows the model variant's architecture:
 
 <p align="center">
   <img align="middle" height="300" src="assets/model-variant-architecture.png"/>
