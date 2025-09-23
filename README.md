@@ -23,9 +23,13 @@ Our first stage training performs knowledge distillation on a trained TFGridnet 
 
 The first and the second stage training share the same training python code, but with different hyperparameters (i.e. yaml config file) provided. For example, to train the monaural model:
 
-- first stage training: ```python train.py configs/Hyperparameter_monaural_stage-1.yaml```
+```python
+# first stage training
+python train.py configs/Hyperparameter_monaural_stage-1.yaml
 
-- second stage training: ```python train.py configs/Hyperparameter_monaural_stage-2.yaml```
+# second stage training
+python train.py configs/Hyperparameter_monaural_stage-2.yaml
+```
 
 To train the binaural model, use the `Hyperparameter_binaural_stage-{1/2}.yaml` files.
 
@@ -56,9 +60,13 @@ Following the reviewers' suggestions, we implemented the early fusion method pro
 
 The model variant is also trained with a two-staged training method:
 
-- first stage training: ```python train-improved-model.py configs/Hyperparameter_monaural_improved_stage-1.yaml```
+```python
+# first stage training
+python train-improved-model.py configs/Hyperparameter_monaural_improved_stage-1.yaml
 
-- second stage training: ```python train-improved-model.py configs/Hyperparameter_monaural_improved_stage-2.yaml```
+# second stage training
+python train-improved-model.py configs/Hyperparameter_monaural_improved_stage-2.yaml
+```
 
 The evaluation code remains the same as above. Checkpoint of the model variant can be found in [Huggingface](https://huggingface.co/ShitongXu/TSE-Pos-Neg-Enroll/blob/main/improved-monaural.pt). The improved model performance is shown below:
 
