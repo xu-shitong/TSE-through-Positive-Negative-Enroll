@@ -3,7 +3,7 @@ gpu: "1"
 batch_size: 2
 epoch_num: 2000
 encoder_lr: !!float 0.0
-main_lr: !!float 0.000000001
+main_lr: !!float 0.001
 
 lr_schedule: plateau
 mode: min
