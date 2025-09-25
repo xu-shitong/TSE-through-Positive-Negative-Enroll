@@ -49,7 +49,7 @@ pos_example_length: 48000
 neg_example_length: 48000
 dvec_rate: 50
 return_clean_dvec: False
-snr_db_range: [-5, 5]
+snr_db_range: [-3, 3]
 source_num: 3
 min_source_num: 3
 active_num: [-1, 1, -1]
