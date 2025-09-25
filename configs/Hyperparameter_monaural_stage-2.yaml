@@ -4,7 +4,7 @@ batch_size: 2
 epoch_num: 1000
 encoder_lr: !!float 0.0
 head_lr: !!float 0.0
-main_lr: !!float 0.0000001
+main_lr: !!float 0.001
 
 lr_schedule: plateau
 mode: min
