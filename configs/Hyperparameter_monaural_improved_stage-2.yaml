@@ -31,14 +31,13 @@ fusion_shortcut: [0,1]
 cut_pos: True
 
 
-# load_encoder: "PATH/TO/TRAINED/ENCODER/encoder_<ID>.pt"
-load_encoder: ""
+load_encoder: "PATH/TO/TRAINED/ENCODER/encoder_<ID>.pt"
 
 sep_layer_num: 3
 
 # ===================================================
 
-load_model: "output/improved-monaural.pt" # THIS will overwrite the prev encoder loading
+load_model: "" # THIS will overwrite the prev encoder loading
 
 # dataset
 train_dataset_dir: "data/LibriSpeech/LibriSpeech/_train_data"
@@ -50,7 +49,7 @@ pos_example_length: 48000
 neg_example_length: 48000
 dvec_rate: 50
 return_clean_dvec: False
-snr_db_range: [0, 0]
+snr_db_range: [-5, 5]
 source_num: 3
 min_source_num: 3
 active_num: [-1, 1, -1]
