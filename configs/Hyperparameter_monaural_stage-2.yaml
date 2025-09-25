@@ -16,12 +16,10 @@ save_epoch: 50
 optimizer: Adam
 
 # =========== encoder ==========
-# load_encoder: "PATH/TO/TRAINED/ENCODER/encoder_<ID>.pt"
-load_encoder: ""
+load_encoder: "PATH/TO/TRAINED/ENCODER/encoder_<ID>.pt"
 
 # ========= encoder head =========
-# load_encoder_head: "PATH/TO/TRAINED/ENCODER/encoder_head_<ID>.pt"
-load_encoder_head: ""
+load_encoder_head: "PATH/TO/TRAINED/ENCODER/encoder_head_<ID>.pt"
 layer_num: 2
 out_dim: 0
 
@@ -47,7 +45,7 @@ fusion_layer: [0, 1]
 
 # ===================================================
 
-load_model: "output/proposed-monaural.pt"
+load_model: ""
 
 # librispeech dataset
 train_dataset_dir: "data/LibriSpeech/LibriSpeech/_train_data"
